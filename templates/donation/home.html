@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section style="background-color: #e8fdf8;">
+    <div class="row container-xl mx-auto py-10 ">
+        <div class="col-12 col-md-6 d-flex flex-column justify-content-center order-1 order-md-0">
+            <div class="intro-container px-3 mx-auto" style="max-width: 530px;">
+                <h1 class="intro-title" >Become a volunteer or Help out with an event</h1>
+                <h3 class="intro-subtitle" >Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit.
+                    Deleniti, nemo odio blanditiis aspernatur cupiditate veritatis quia excepturi.</h3>
+                <div class="d-flex mt-3 space-x-2">
+
+                    <a href="#donation-section" class="btn btn-outline-danger d-inline-block px-4  ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-filled" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                                d="M19.5 12.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572">
+                            </path>
+                        </svg>
+                        <strong>I want to donate</strong>
+                    </a>
+                    <a href="#about-section" class="btn btn-outline-teal">
+                        About us
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 d-flex order-0 order-md-1">
+            <img id="intro-image" src="{% static 'images/intro.jpg' %}" alt="">
+        </div>
+    </div>
+</section>
+
+<section id="donation-section" class="bg-white min-vh-100 d-flex align-items-center ">
+    <div class=" mx-auto ">
+        <div class="row container-xl  mx-auto py-10 ">
+            <div class="col-12 col-md-6 d-flex ">
+                <div class="container text-center py-4">
+                    <h1 class="intro-title" >Make children happy today</h1>
+                    <h3 class="intro-subtitle" >Lorem ipsum dolor sit amet
+                        consectetur
+                        adipisicing elit.
+                        Deleniti, nemo odio blanditiis aspernatur .</h3>
+                    <img id="heart-image" class="px-3 mt-3 mt-md-4" src="{% static 'images/heart.png' %}"  alt="">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 d-flex flex-column justify-content-center 0">
+                <div class="donation">
+                    <div class="card mb-2 ">
+                        <div class="card-body ">
+                            <form id="donation-form" action="" method="post">
+                                {% csrf_token %}
+                                <div class="mb-3">
+
+                                    <label class="form-label">Your full name</label>
+                                    {{form.client}}
+                                    {% comment %} <input type="text" class="form-control" name="example-text-input"
+                                        placeholder="full name .."> {% endcomment %}
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    {{form.client_email}}
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Amount (DZ)</label>
+                                    {{form.amount}}
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Comment</label>
+                                    {{form.comment}}
+                                    {% comment %} <textarea name="" id="" rows="6" class="form-control"></textarea> {% endcomment %}
+                                </div>
+                                <button class="btn btn-outline-danger">
+                                    Make donation
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="about-section" class="py-5" style="background-color: #f2f1ef;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 d-flex flex-column justify-content-center order-1 order-md-0">
+                    <div class=" px-3 mx-auto" style="max-width: 530px;">
+                        <h1 class="intro-title" >Become a volunteer or Help out with an event</h1>
+                        <h3 class="intro-subtitle" >Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit.
+                            Deleniti, nemo odio blanditiis aspernatur cupiditate veritatis quia excepturi.</h3>
+                  
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 d-flex order-0 order-md-1">
+                    <img id="intro-image" src="{% static 'images/organization.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

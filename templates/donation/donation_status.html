@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section id="donation-section" class="bg-white min-vh-100 d-flex align-items-center ">
+    <div class=" mx-auto ">
+        <div class="row container-xl  mx-auto py-10 ">
+            {% if object.status == "paid" %}
+                <div class="col-12 col-md-10 d-flex mx-auto  ">
+                    <div class="container text-center ">
+                        <h1 class="intro-title text-red opacity-90" >Thank you for your donation</h1>
+                        <h3 class="intro-subtitle" >We are very happy with your donation, this will help a lot of people who need it.</h3>
+                        <img id="heart-image" class="px-3 mt-3 mt-md-4" src="{% static 'images/heart.png' %}"  alt="">
+                        <div class="py-4">
+                            <a href="{% url 'home' %}" class="btn btn-outline-danger" >Go back</a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+            <div class="col-12 col-md-10 d-flex mx-auto  ">
+                <div class="container text-center ">
+                    <h1 class="intro-title text-red opacity-90" >Your donation has been canceled </h1>
+                    <h3 class="intro-subtitle" >We are very happy with your donation, this will help a lot of people who need it.</h3>
+                    <img id="heart-image" class="px-4 mt-3 mt-md-4 " src="{% static 'images/close.png' %}"  alt="">
+                    <div class="py-4">
+                        <a href="{% url 'home' %}" class="btn btn-outline-danger" >Go back</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+       </div>
+    </div>
+</section>
+{% endblock content %}

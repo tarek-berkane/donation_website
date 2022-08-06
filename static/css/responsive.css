@@ -1,0 +1,51 @@
+
+@media screen and (max-width: 500px) {
+
+    .intro-container {
+        margin: 30px 0;
+        text-align: center;
+    }
+
+    .intro-title {
+        font-size: 1.4rem !important;
+    }
+
+    .intro-subtitle {
+        font-size: 0.8rem !important;
+    }
+
+    #intro-image {
+        display: inline-block;
+        margin: auto;
+        max-height: 300px;
+    }
+
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .intro-container {
+        margin: 30px 0;
+        text-align: center;
+    }
+
+    .intro-title {
+        font-size: 1.8rem !important;
+    }
+
+    .intro-subtitle {
+        font-size: 0.9rem !important;
+    }
+
+    #intro-image {
+        display: inline-block;
+        margin: auto;
+        max-height: 300px;
+    }
+
+    #heart-image{
+        max-height: 150px;
+    }
+
+}

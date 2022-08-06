@@ -1,0 +1,20 @@
+body {
+    font-family: 'Poppins';
+}
+
+#intro-image {
+    max-height: 500px;
+}
+
+.intro-title {
+    font-size: 2.2rem;
+}
+
+.intro-subtitle {
+    font-size: 1rem;
+    opacity: 0.8;   
+}
+
+#heart-image{
+    max-height: 200px;
+}
